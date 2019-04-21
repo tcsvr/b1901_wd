@@ -1,0 +1,58 @@
+<?php include('view/common/meta.html'); ?>
+
+<link rel="stylesheet" href="css/case_list.css">
+<link rel="stylesheet" href="include/page/css.css">
+<body>
+	<div class="container">
+		<?php include('view/common/header.html'); ?>
+		<div class="main_nav">
+			<p>
+				<img src="images/new_icon_01.png" alt="">
+				<a href="case_list.php">案例展示</a>
+				&gt;
+				<span><a href=""><?php echo $status['ca_name']; ?></a></span>
+			</p>
+			<h1>案例展示</h1>
+		</div>
+		<div class="main_con">
+			<nav>
+				<!-- 分类 -->
+			<?php foreach($category as $v){ ?>
+				<?php if($caid==$v['ca_id']){ ?>
+				<a class="main_nava" href="?naid=<?php echo $navcu['n_id'] ?>&caid=<?php echo $v['ca_id'] ?>"><?php echo $v['ca_name']; ?></a>
+				<?php }else{ ?>
+				<a href="?naid=<?php echo $navcu['n_id'] ?>&caid=<?php echo $v['ca_id'] ?>"><?php echo $v['ca_name']; ?></a>
+			<?php } } ?>
+			</nav>
+			<ul>
+				
+			<?php foreach($case as $v){ ?>
+				<li>
+					<a href="case.php?naid=<?php echo $navcu['n_id'] ?>&caid=<?php echo $v['ca_id'] ?>&cid=<?php echo $v['c_id'] ?>;">
+						<img style="width:100%;"src="<?php echo _UPLOAD_.$v['c_img'] ?>" alt="">
+						<p>
+							<img src="images/look.png" alt="">
+							<br>
+							<?php echo $v['c_id']; ?>
+							<span><?php echo $v['c_title'] ?></span>
+						</p>
+					</a>
+				</li>
+			<?php } ?>
+				
+			</ul>
+			<div class="paging">
+				<?php echo $page; ?>
+			</div>
+		</div>
+		<footer>
+			<div class="foot">
+				<p>粤ICP备12022584号-3</p>
+				<p>广州文豆网络科技有限公司 Copyright 2009-2015 ,All Rights Reserved wengdo</p>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>
+<!-- 导航滚动条 -->
+<script src='js/nav_scroll.js'></script>

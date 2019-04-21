@@ -1,0 +1,75 @@
+/* Author: Louis Holladay
+ * Website: AdminDesigns.com
+ * Last Updated: 02/01/14 
+ * Copyright 2014 Admin Designs
+=================================================
+ * This file is reserved for changes made by 
+ * the user. It's often times a good idea to 
+ * seperate your changes from the themes core.
+ * It makes modifications, and future theme
+ * updates much easier to apply.
+================================================= */
+/* These styles have been placed here for as 
+ * they have a high chance of needing to be
+ * changed if one decides to modify the header
+-----------------------------------------------*/
+/* Navbar bottom border disabled by default */
+.navbar {
+  border-bottom: 1px solid transparent; }
+
+/* Header button states - text colors */
+.header-btns > div > button:focus {
+  color: #666; }
+
+.header-btns > div > button:hover {
+  color: #0094d2; }
+
+ .header-btns .user {margin-right: 20px;}
+
+ #docs-content {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #ddd;
+    min-height: 500px;
+    padding: 25px;
+}
+
+.sidebar-nav li.active  {
+    background: #ddd;
+}
+
+ul.sidebar-nav ul.sub-nav > li > a:hover {
+    background: #eee;
+}
+
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    border-top: 1px solid #ddd;
+    line-height: 1.42857;
+    padding: 8px;
+    vertical-align: middle;
+}
+
+.js-table-sections-header > tr > td:first-child > i {
+    transition: transform 0.15s ease-out 0s;
+}
+.js-table-sections-header + tbody {
+    display: none;
+}
+.js-table-sections-header.open > tr {
+    background-color: #f9f9f9;
+}
+.js-table-sections-header.open > tr > td:first-child > i {
+    transform: rotate(90deg);
+}
+.js-table-sections-header.open + tbody {
+    display: table-row-group;
+}
+
+
+/* Sidebar menu item states - background colors */
+/* top level*/
+/* Submenu item level */
+/* Place your custom styles or styles which 
+ * have been generated with the customization 
+ * tool below this line. 
+-----------------------------------------------*/

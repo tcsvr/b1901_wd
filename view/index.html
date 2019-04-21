@@ -1,0 +1,252 @@
+<?php include('view/common/meta.html'); ?>
+
+<body>
+	<link rel="stylesheet" href="<?php echo _CSS_; ?>index.css">
+
+	<div class="container">
+		<a name="Top"></a>
+		<?php include('view/common/header.html'); ?>
+		<div class="service">
+			<h1>我们的服务<br><span>Services</span></h1>
+			<i></i>
+			<p>我们为您提供，最精致的服务，最全面的技术</p>
+			<ul id="service">
+			<?php foreach($service as $k=>$v){ ?>
+				<?php if($k==0){ ?>
+				<li>
+					<a href="" class="ser_a">
+					<img src="<?php echo $v['s_img1']  ?>" alt="">
+					<br>
+					<?php echo $v['s_title'] ?>
+					</a>
+				</li>
+				<?php }else{ ?>
+				<li>
+					<a href="">
+					<img src="<?php echo $v['s_img2'] ?>" alt="">
+					<br>
+					<?php echo $v['s_title'] ?>
+					</a>
+				</li>
+			<?php } }?>
+				
+			</ul>
+		</div>
+		<div class="case">
+			<h1>案例展示<br><span>Cases</span></h1>
+			<i></i>
+			<nav>
+				<!-- 案例分类 -->
+			<?php foreach($category as $v){ ?>
+				<?php if($v['ca_id']==$caid){ ?>
+				<a href="?naid=<?php echo $navcu['n_id'] ?>&caid=<?php echo $v['ca_id'] ?>" class="case_a"><?php echo $v['ca_name'] ?></a>
+
+				<?php }else{ ?>
+
+				<a href="?naid=<?php echo $navcu['n_id'] ?>&caid=<?php echo $v['ca_id'] ?>"><?php echo $v['ca_name'] ?></a>
+			<?php } } ?>
+
+			</nav>
+			<ul>
+				<!-- 案例 -->
+			<?php foreach($case as $v){ ?>
+				<li>
+					<a href="<?php echo $get; ?>cid=<?php echo $v['c_id'] ?>">
+						<img style="width:100%;" src="<?php echo _UPLOAD_.$v['c_img'] ?>" alt="">
+						<div>
+							<img src="<?php echo _IMG_; ?>look.png" alt="">
+							<br>
+							<?php echo $v['c_id'] ?>
+							==
+							<?php echo $v['c_title'] ?>
+						</div>
+					</a>
+				</li>
+			<?php } ?>
+				<li>
+					<a href="case.html">
+						<img src="<?php echo _IMG_; ?>case_08.jpg" alt="">
+						<p>MORE</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="about">
+			<h1>关于我们<br><span>About us</span></h1>
+			<i></i>
+			<p class="about_p1">不用担心距离, 文豆就在你身边</p>
+			<p class="about_p2"><?php echo mb_substr($about,0,78,'utf-8') ?>......</p>
+			<img src="<?php echo _IMG_; ?>point.png" alt="">
+			<br>
+			<a href="about.php">点击查看</a>
+		</div>
+		<div class="news">
+			<a href=""><img id="new_more" class="new_more" src="<?php echo _IMG_; ?>icon.png" alt=""></a>
+			<h2>最新资讯<br><span>News</span></h2>
+			<i></i>
+			<p class="new_p1">
+				文豆集团，你身边的IT互联网专家
+			</p>
+			<ul>
+				<?php foreach($news as $v){ ?>
+				<li>
+					<div class="new_h"><?php echo date('m.d',$v['n_time']) ?> <br><span><?php echo date('Y',$v['n_time']) ?></span></div>
+					<div class="new_p">
+						<h3><a href="news.php?nid=<?php echo $v['n_id'] ?>"><?php echo $v['n_title'] ?><span>&gt;</span></a></h3>
+						<p><?php echo mb_replace_substr($v['n_detail'],68); ?>...</p>
+					</div>
+				</li>
+				<?php } ?>
+			</ul>
+		</div>
+		<div class="partner">
+			<h4>合作伙伴</h4>
+			<em>Partner</em>
+			<i></i>
+			<p>他们选择了文豆，我们的专业合作伙伴</p>
+			<ul>
+				<?php foreach($partner as $v ){ ?>
+				<li>
+					<a href="<?php echo $v['p_link'] ?>">
+						<img src="<?php echo  _UPLOAD_.$v['p_img'] ?>" title="<?php echo $v['p_title'] ?>">
+					</a>
+				</li>
+				<?php } ?>
+			</ul>
+		</div>
+		<footer>
+			<div class="contact">
+				<h4>联系我们</h4>
+				<em>Contact us</em>
+				<i></i>
+				<p>他们选择了文豆，我们的专业合作伙伴</p>
+				<div class="con_ul">
+					<div class="con_left">
+						<ul>
+							<li>广州总部：广州海珠区广州大道南448号财智大厦28楼</li>
+							<li>深圳总部：深圳福田区福华路322号文蔚大厦4楼</li>
+							<li>广州番禺分部：广州市番禺区市桥光明北路12号锦绣华庭三座404</li>
+							<li>广州增城分部：广州增城区荔城花园东门32号</li>
+							<li>广州大学城分部：广州大学城中七路大学时光首层</li>
+						</ul>
+					</div>
+					<div class="con_center">
+						<img class="ew" src="<?php echo _IMG_; ?>ew.png" alt="">
+						<br>
+						<a href=""><img src="<?php echo _IMG_; ?>icon_05.png" alt=""></a>
+						<a href=""><img src="<?php echo _IMG_; ?>icon_06.png" alt=""></a>
+						<a href=""><img src="<?php echo _IMG_; ?>icon_07.png" alt=""></a>
+						<a href=""><img src="<?php echo _IMG_; ?>icon_08.png" alt=""></a>
+					</div>
+					<div class="con_right">
+						<ul>
+							<li>广州白云分部：广州市白云区从云路839号利都商务中心B911</li>
+							<li>惠州分部：惠州市惠城区江北三新南路3号名流公馆10层05室</li>
+							<li>佛山分部:佛山市南海区桂城南新一路16号首层</li>
+							<li>东莞分部：东莞市莞城区汇峰中心E区1002室</li>
+							<li>肇庆分部：肇庆市端州区端州五路18号大楼四楼长江教育(市人才大厦前)</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="foot">
+				<p>粤ICP备12022584号-3</p>
+				<p>广州文豆网络科技有限公司 Copyright 2009-2015 ,All Rights Reserved wengdo</p>
+			</div>
+		</footer>
+	</div>
+	<aside>
+		<div></div>
+		<p>
+			<span>020-66668888</span>
+			<a href="">
+				<img src="<?php echo _IMG_; ?>icon_01.png" alt="">
+			</a>
+		</p>
+		<p>
+			<span>66668888</span>
+			<a href="">
+				<img src="<?php echo _IMG_; ?>icon_02.png" alt="">
+			</a>
+		</p>
+		<p>
+			<span>人才招聘</span>
+			<a href="">
+				<img src="<?php echo _IMG_; ?>icon_03.png" alt="">
+			</a>
+		</p>
+		<p>
+			<span>回到顶部</span>
+			<a href="#Top">
+				<img src="<?php echo _IMG_; ?>icon_04.png" alt="">
+			</a>
+		</p>
+	</aside>
+</body>
+</html>
+
+<script>
+
+	//more滚动
+	var new_more=document.getElementById('new_more');
+	//滚动条事件改变导航背景色
+	var head_scroll=document.getElementById('head_scroll');
+
+	document.onscroll=function(){
+		var scroll_top=document.body.scrollTop || document.documentElement.scrollTop;
+		if(scroll_top>$('#con').height()){
+			head_scroll.style.background='rgba(21,24,27,1)';
+		}
+		if(scroll_top<$('#con').height()){
+			head_scroll.style.background='rgba(21,24,27,0.3)';
+		}
+		if(scroll_top>$('#con').height()+503+680 && scroll_top<$('#con').height()+503+680+431){
+			new_more.style.right=605+'px';
+			new_more.style.transform='rotate(-720deg)';
+		}else{
+			new_more.style.right=0;
+			new_more.style.transform='rotate(0deg)';
+		}
+		
+	}
+	
+	// 侧边导航条（右边）
+	var aside=document.getElementsByTagName('aside')[0];
+	var p=aside.getElementsByTagName('p');
+	var span=aside.getElementsByTagName('span');
+
+	for(var i=0; i<p.length; i++){
+		p[i].onmouseover=function(){
+			this.className='box_bg';
+		}
+		p[i].onmouseout=function(){
+			this.className='';
+		}
+	}
+
+
+//服务项目  
+$imgArr1 = <?php echo $imgArr1; ?>;
+$imgArr2 = <?php echo $imgArr2; ?>;
+
+
+	// 服务项目
+	var service=document.getElementById('service');
+	var li=service.getElementsByTagName('li');
+	var img=service.getElementsByTagName('img');
+	var a=service.getElementsByTagName('a');
+
+	for(var i=0; i<li.length; i++){
+		li[i].index=i;
+		li[i].onmouseover=function(){
+			for(var i=0; i<li.length; i++){
+				// img[i].src='<?php //echo _IMG_; ?>server_0'+(i+1)+'.gif';
+				img[i].src=<?php //echo _IMG_; ?>$imgArr2[i];
+				a[i].className='';
+			}
+			// img[this.index].src='<?php //echo _IMG_; ?>server_0'+(this.index+1)+'.jpg';
+			img[this.index].src=<?php //echo _IMG_; ?>$imgArr1[this.index];
+			a[this.index].className="ser_a";
+		}
+	}
+</script>

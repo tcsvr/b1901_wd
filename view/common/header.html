@@ -1,0 +1,30 @@
+<header>
+    <div class="head_nav" id="head_scroll">
+        <a href="index.php">
+            <img src="<?php echo _IMG_; ?>logo_01.png" alt="">
+        </a>
+        <nav>
+            <?php foreach($nav as $v){ ?>
+            <a href="<?php echo $v['n_link']; ?>?naid=<?php echo $v['n_id'] ?>&caid=<?php echo $status['ca_id']; ?>"><?php echo $v['n_name'] ?></a>
+            <?php } ?>
+        </nav>
+    </div>
+    <div class="banner">
+        <div id="con">
+            <ul>
+                <!-- 结构不一致时遍历里面加if判断 -->
+                <?php foreach($banner as $k=>$v){ ?>
+                <?php if($k==0){ ?>
+                <li><img id="img_one" src="<?php echo _UPLOAD_.$v['b_img']; ?>" alt=""></li>
+                <?php }else{ ?>
+                <li><img src="<?php echo _UPLOAD_.$v['b_img']; ?>" alt=""></li>
+                <?php } } ?>
+            </ul>
+            <a id="prev" href="javascript:;"><img src="<?php echo _IMG_; ?>ban_prev.png" alt=""></a>
+            <a id="next" href="javascript:;"><img src="<?php echo _IMG_; ?>ban_next.png" alt=""></a>
+            <ol>
+
+            </ol>
+        </div>
+    </div>
+</header>

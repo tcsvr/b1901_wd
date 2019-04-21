@@ -1,0 +1,50 @@
+*{
+	margin:0; padding:0;
+	list-style: none;
+}
+#con{
+	position: relative;
+	margin:0 auto;
+	overflow: hidden;
+}
+#con img{
+	width:100%;
+}
+#con ul{
+	position: absolute;
+	left:0;
+}
+#con ul li{
+	float:left;
+	
+}
+#con, #con ul li{
+}
+#prev , #next{
+	position: absolute;
+	top:40%;
+	display:none;
+	width:39px; height: 90px;
+}
+#prev{
+	left:10px;
+}
+#next{
+	right:10px;
+}
+#con ol{
+	overflow: hidden;
+	position: absolute;
+	right:43%; bottom:10%;
+}
+#con ol li{
+	width:39px; height:9px;
+	background:#939393;
+	float:left;
+	margin:5px;
+	border:1px solid #939393;
+}
+#con .oli{
+	background:#fff;
+	border:1px solid #fff;
+}

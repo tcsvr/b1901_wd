@@ -1,0 +1,195 @@
+.container{
+	width:100%;
+	background:#fff;
+	margin:0 auto;
+}
+header{
+	width:100%; /*height:540px;*/
+}
+header .head_nav{
+	width:100%; height:60px;
+	background:rgba(21,24,27,0.3);
+	position: absolute;
+	z-index: 999;
+	line-height: 60px;
+}
+header .head_nav img{
+	float:left;
+	margin-left:98px;
+}
+header .head_nav nav{
+	float:right;
+	margin-right:98px;
+}
+header .head_nav nav a{
+	padding:20px 7px;
+	margin-left:29px;
+	color:#fff;
+	font-size:16px;
+}
+header .head_nav nav a:hover{
+	background: #bf4609;
+}
+.main_nav{
+	width:1143px; height:195px;
+	margin:0 auto;
+	padding-top:35px;
+}
+.main_nav nav,.main_nav nav a{
+	color:#4c4c4c;
+	font-size:16px;
+}
+.main_nav nav a span{
+	color:#e97520;
+}
+.main_nav nav img{
+	margin-right:10px;
+}
+.main_nav h1{
+	font-size:24px;
+	color:#000;
+	width:200px;
+	margin:52px auto 45px;
+}
+.main{
+	width:100%;
+	/*background:#f9f9f9;*/
+}
+.main .main_con{
+	width:982px; height:180px;
+	margin:0 auto;
+	padding-top:25px;
+	border-bottom:1px solid #e5e5e5;
+}
+.main .main_con img{
+	float:left;
+}
+.main .main_con div{
+	float:left;
+	width:48px; height:48px;
+	padding:12px;
+	background: #e7e7e7;
+	color:#000;
+	font-size:18px;
+	font-weight: 900;
+	margin:35px 27px 0;
+}
+.main .main_con div span{
+	display: block;
+	color:#323232;
+	font-size:12px;
+	font-weight: 900;
+	float:right;
+}
+.main .main_con dl{
+	float:left;
+	width:617px;
+}
+.main .main_con dl dt h2{
+	font-size:16px;
+	color:#000;
+	font-weight: 900;
+	margin:13px 0;
+}
+.main .main_con dl dt h2 a{
+	color:#000;
+}
+.main .main_con dl dt h3{
+	font-size:14px;
+	color:#3a3a3a;
+	font-weight: 900;
+}
+.main .main_con dl dd{
+	font-size:12px;
+	color:#7a7a7a;
+	line-height: 20px;
+}
+.main .main_con dl dd a{
+	color:#fda031;
+}
+.main .main_con:hover{
+	background: #f2f8f4;
+}
+.main .main_con:hover dl dt h2 a{
+	color:#ff6e26;
+}
+.main .main_con:hover div{
+	background: #b8b8b8;
+}
+.main nav{
+	width:390px; height:32px;
+	margin:60px auto 100px;
+}
+.main nav a{
+	padding:5px 10px;
+	color:#3d3d3d;
+}
+.main nav a:hover{
+	background:#f37e1f;
+	color:#fff;
+}
+footer{
+	width:100%; height:230px;
+	background:url(../images/foot_bg.jpg) repeat-x;
+	border-top:1px solid #eee;
+	padding-top:35px;
+	position: relative;
+}
+
+.contact{
+	width:906px;
+	margin:0 auto;
+}
+
+.contact div{
+	float:left;
+}
+.contact .con_left{
+	width:275px;
+}
+.contact .con_left p{
+	font-size: 14px;
+	color:#666;
+}
+.contact .con_left span{
+	font-size: 16px;
+	color:#999;
+}
+
+.contact .con_center{
+	width:255px; height:110px;
+	line-height: 110px;
+	border-left:1px solid #e3e3e3;
+	border-right:1px solid #e3e3e3;
+}
+.contact .con_center p{
+	font-size: 14px;
+	color:#666;
+	margin-left:20px;
+}
+.contact .con_center p a{
+	margin:0 8px;
+}
+
+.contact .con_right{
+	width:275px;
+}
+.contact .con_right img{
+	float:right;
+}
+
+.foot{
+	position: absolute;
+	left:0; bottom:0;
+	width:100%; height:68px;
+	background:rgba(50,50,50,1);
+	padding-top:20px;
+	text-align: center;
+}
+.foot p{
+	color:#666;
+	font-size: 14px;
+	margin:5px 0;
+}
+
+

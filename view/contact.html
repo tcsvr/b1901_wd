@@ -1,0 +1,77 @@
+<?php include('view/common/meta.html'); ?>
+
+<link rel="stylesheet" href="css/contact.css">
+<body>
+	<div class="container">
+		<?php include('view/common/header.html'); ?>
+		<div class="main_nav">
+			<nav>
+				<a href="contact.html"><img src="images/new_icon_01.png" alt=""></a>
+				<a href="contact.html"><span>联系我们</span></a>
+			</nav>
+			<h1>联系我们</h1>
+		</div>
+		<div class="main">
+			<div class="main_left">
+				<?php echo $contact['a_content']; ?>
+				
+			</div>
+			<div class="main_right">
+				<form action="">
+					<div>
+					<p>欢迎来电咨询或者表单联系我们/Contact us</p>
+					<p>您的姓名：</p>
+					<input type="text" name="" id="">
+					<p>您的邮箱：</p>
+					<input type="text" name="" id="">
+					<p>您的电话：</p>
+					<input type="text" name="" id="">
+					<p>输入您要服务的内容：</p>
+					<textarea name="" id="" cols="30" rows="10"></textarea>
+					</div>
+					<p>
+						<input type="image" src="images/submit.gif" alt="">
+					</p>
+				</form>
+			</div>
+			<div class="map">
+				<iframe src="view/map.html" frameborder="0"></iframe>
+			</div>
+		</div>
+		<footer>
+			<div class="contact">
+				<div class="con_left">
+					<a href="index.html">
+						<img src="images/wdlogo.png" alt="">
+					</a>
+					<p>我们全心全意为你提供最优质的服务</p>
+					<span>www.wengdo.cn</span>
+				</div>
+				<div class="con_center">
+					<p>
+						分享文章到：
+						<a href="">
+							<img src="images/new_icon_02.png" alt="">
+						</a>
+						<a href="">
+							<img src="images/new_icon_03.png" alt="">
+						</a>
+						<a href="">
+							<img src="images/new_icon_04.png" alt="">
+						</a>
+					</p>
+				</div>
+				<div class="con_right">
+					<img src="images/detailed_ew.png" alt="">
+				</div>
+			</div>
+			<div class="foot">
+				<p>粤ICP备12022584号-3</p>
+				<p>广州文豆网络科技有限公司 Copyright 2009-2015 ,All Rights Reserved wengdo</p>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>
+<!-- 导航滚动条 -->
+<script src='js/nav_scroll.js'></script>

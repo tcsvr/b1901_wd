@@ -1,0 +1,175 @@
+.container{
+	width:100%;
+	background:#fff;
+	margin:0 auto;
+}
+header{
+	width:100%;
+}
+header .head_nav{
+	width:100%; height:60px;
+	background:rgba(21,24,27,0.3);
+	position: fixed;
+	top:0;
+	z-index: 999;
+	line-height: 60px;
+}
+header .head_nav img{
+	float:left;
+	margin-left:98px;
+}
+header .head_nav nav{
+	float:right;
+	margin-right:98px;
+}
+header .head_nav nav a{
+	padding:20px 7px;
+	margin-left:29px;
+	color:#fff;
+	font-size:16px;
+}
+header .head_nav nav a:hover{
+	background: #bf4609;
+}
+.main_nav{
+	width:1143px; height:195px;
+	margin:0 auto;
+	padding-top:35px;
+}
+.main_nav nav,.main_nav nav a{
+	color:#4c4c4c;
+	font-size:16px;
+}
+.main_nav nav a span{
+	color:#e97520;
+}
+.main_nav nav img{
+	margin-right:10px;
+}
+.main_nav h1{
+	font-size:24px;
+	color:#000;
+	width:200px;
+	margin:52px auto 45px;
+}
+.main_nav p{
+	width: 113px;
+	float:right;
+	margin-right:70px;
+}
+.main_nav p a{
+	margin:2px;
+}
+.main{
+	width:100%;
+	background:#f9f9f9;
+}
+.main .main_con{
+	width:1192px; /*height:3239px;*/
+	margin:0 auto;
+}
+.main .main_con .main_bot{
+	width:1192px; height:121px;
+	padding-top:30px;
+}
+.main .main_con .main_bot a{
+	margin:0 5px;
+}
+footer{
+	width:100%; height:230px;
+	background:url(../images/foot_bg.jpg) repeat-x;
+	border-top:1px solid #eee;
+	padding-top:35px;
+	position: relative;
+}
+
+.contact{
+	width:906px;
+	margin:0 auto;
+}
+
+.contact div{
+	float:left;
+}
+.contact .con_left{
+	width:275px;
+}
+.contact .con_left p{
+	font-size: 14px;
+	color:#666;
+}
+.contact .con_left span{
+	font-size: 16px;
+	color:#999;
+}
+
+.contact .con_center{
+	width:255px; height:110px;
+	line-height: 110px;
+	border-left:1px solid #e3e3e3;
+	border-right:1px solid #e3e3e3;
+}
+.contact .con_center p{
+	font-size: 14px;
+	color:#666;
+	margin-left:20px;
+}
+.contact .con_center p a{
+	margin:0 8px;
+}
+
+.contact .con_right{
+	width:275px;
+}
+.contact .con_right img{
+	float:right;
+}
+
+.foot{
+	position: absolute;
+	left:0; bottom:0;
+	width:100%; height:68px;
+	background:rgba(50,50,50,1);
+	padding-top:20px;
+	text-align: center;
+}
+.foot p{
+	color:#666;
+	font-size: 14px;
+	margin:5px 0;
+}
+
+aside{
+	/*width:44px;*/ height:148px;
+	position: fixed;
+	right:0px; top:50%;
+
+}
+aside div{
+	width:44px; height:148px;
+	background:#989898;
+	position: absolute;
+	top:0; right:0;
+} 
+aside p{
+	height:37px;
+	line-height: 37px;
+	position: relative;
+	z-index: 999;
+	color:#fff;
+	overflow: hidden;
+}
+aside p a{
+	float:right;
+}
+aside p span{
+	padding:0 10px;
+	display:none;
+}
+aside .box_bg{
+	background:#ec6618;
+}
+aside .box_bg span{
+	display:inline-block;
+}
+

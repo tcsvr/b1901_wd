@@ -1,0 +1,55 @@
+<aside id="sidebar" class="affix">
+  <div id="sidebar-search">
+    <div class="sidebar-toggle"><span class="glyphicon glyphicon-resize-horizontal"></span></div>
+  </div>
+  <div id="sidebar-menu">
+    <ul class="nav sidebar-nav">
+      <li>
+        <a href="index.php"><span class="glyphicons glyphicon-home"></span><span class="sidebar-title">后台首页</span></a>
+      </li>
+
+      <li>
+        <a href="nav_list.php"><span class="glyphicons glyphicon-list"></span><span
+            class="sidebar-title">导航管理</span></a>
+      </li>
+      <li>
+        <a href="banner_list.php"><span class="glyphicons glyphicon-list"></span><span
+            class="sidebar-title">轮播图管理</span></a>
+      </li>
+      <li>
+        <a href="category_list.php"><span class="glyphicons glyphicon-list"></span><span
+            class="sidebar-title">案例分类管理</span></a>
+      </li>
+      <li> <a href="#sideEight" class="accordion-toggle <?php if(isset($_GET['caid'])) echo 'menu-open'; ?>"><span
+            class="glyphicons glyphicon-list"></span><span class="sidebar-title">案例管理</span><span
+            class="caret"></span></a>
+        <ul class="nav sub-nav" id="sideEight" style="">
+
+          <?php foreach($category as $v){ ?>
+          <li class="<?php if($v['ca_id']==$caid) echo 'active'; ?>">
+            <a href="case_list.php?caid=<?php echo $v['ca_id'] ?>"><span class="glyphicons glyphicon-record"></span>
+              <?php echo $v['ca_name'] ?></a></li>
+          <?php } ?>
+        </ul>
+      </li>
+
+      <li>
+        <a href="about.php"><span class="glyphicons glyphicon-list"></span><span class="sidebar-title">关于我们管理</span></a>
+      </li>
+      
+      <li>
+        <a href="news_list.php"><span class="glyphicons glyphicon-list"></span><span class="sidebar-title">新闻资讯</span></a>
+      </li>
+      <li>
+        <a href="partner_list.php"><span class="glyphicons glyphicon-list"></span><span class="sidebar-title">合作伙伴</span></a>
+      </li>
+      <li>
+        <a href="contact.php"><span class="glyphicons glyphicon-list"></span><span class="sidebar-title">联系我们</span></a>
+      </li>
+      <li>
+        <a href="user_list.html"><span class="glyphicons glyphicon-list"></span><span
+            class="sidebar-title">系统管理员</span></a>
+      </li>
+    </ul>
+  </div>
+</aside>

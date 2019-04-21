@@ -1,0 +1,134 @@
+
+<?php include('view/common/meta.html'); ?>
+<link rel="stylesheet" href="css/new_detailed.css">
+
+<body>
+	<div class="container">
+		<a name="Top"></a>
+		<?php include('view/common/header.html'); ?>
+		<div class="main_nav"> 
+			<nav>
+				<a href="new_detailed.html"><img src="images/new_icon_01.png" alt=""></a>
+				<a href="">资讯动态</a>
+				&gt;
+				<a href="">最新资讯</a>
+				&gt;
+				<a href=""><span><?php echo $new['n_title']; ?></span></a>
+			</nav>
+			<h1><?php echo $new['n_title']; ?></h1>
+			<p>
+				<a href="">
+					<img src="images/new_icon_02.png" alt="">
+				</a>
+				<a href="">
+					<img src="images/new_icon_03.png" alt="">
+				</a>
+				<a href="">
+					<img src="images/new_icon_04.png" alt="">
+				</a>
+			</p>
+		</div>
+		<div class="main">
+			<!-- 内容 -->
+			<?php echo $new['n_detail']; ?>
+			<div class="main_con">
+				<div class="main_bot">
+					<?php if(!empty($next)){ ?>
+					<a href="<?php echo get_url(); ?>nid=<?php echo $next['n_id'] ?>">
+						<img src="images/detailed_prev.png" alt="">
+					</a>
+					<?php }else{ ?>
+						<span><img src="images/detailed_prev2.png" alt=""></span>
+					<?php } ?>
+
+					<?php if(!empty($prev)){ ?>
+					<a href="<?php echo get_url(); ?>nid=<?php echo $prev['n_id'] ?>">
+						<img src="images/detailed_next.png" alt="">
+					</a>
+					<?php }else{ ?>
+						<span><img src="images/detailed_next2.png" alt=""></span>
+					<?php } ?>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<div class="contact">
+				<div class="con_left">
+					<a href="index.html">
+						<img src="images/wdlogo.png" alt="">
+					</a>
+					<p>我们全心全意为你提供最优质的服务</p>
+					<span>www.wengdo.cn</span>
+				</div>
+				<div class="con_center">
+					<p>
+						分享文章到：
+						<a href="">
+							<img src="images/new_icon_02.png" alt="">
+						</a>
+						<a href="">
+							<img src="images/new_icon_03.png" alt="">
+						</a>
+						<a href="">
+							<img src="images/new_icon_04.png" alt="">
+						</a>
+					</p>
+				</div>
+				<div class="con_right">
+					<img src="images/detailed_ew.png" alt="">
+				</div>
+			</div>
+			<div class="foot">
+				<p>粤ICP备12022584号-3</p>
+				<p>广州文豆网络科技有限公司 Copyright 2009-2015 ,All Rights Reserved wengdo</p>
+			</div>
+		</footer>
+	</div>
+	<aside>
+		<div></div>
+		<p>
+			<span>020-66668888</span>
+			<a href="">
+				<img src="images/icon_01.png" alt="">
+			</a>
+		</p>
+		<p>
+			<span>66668888</span>
+			<a href="">
+				<img src="images/icon_02.png" alt="">
+			</a>
+		</p>
+		<p>
+			<span>人才招聘</span>
+			<a href="">
+				<img src="images/icon_03.png" alt="">
+			</a>
+		</p>
+		<p>
+			<span>回到顶部</span>
+			<a href="#Top">
+				<img src="images/icon_04.png" alt="">
+			</a>
+		</p>
+	</aside>
+</body>
+</html>
+<!-- 导航滚动条 -->
+<script src='js/nav_scroll.js'></script>
+<script>
+	// 侧边导航条（右边）
+	var aside=document.getElementsByTagName('aside')[0];
+	var p=aside.getElementsByTagName('p');
+	var span=aside.getElementsByTagName('span');
+
+	for(var i=0; i<p.length; i++){
+		p[i].onmouseover=function(){
+			this.className='box_bg';
+		}
+		p[i].onmouseout=function(){
+			this.className='';
+		}
+	}
+
+	
+</script>

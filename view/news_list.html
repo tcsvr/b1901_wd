@@ -1,0 +1,73 @@
+<?php include('view/common/meta.html'); ?>
+
+
+<link rel="stylesheet" href="css/new_list.css">
+<link rel="stylesheet" href="include/page/css.css">
+<body>
+	<div class="container">
+		<a name="Top"></a>
+		<?php include('view/common/header.html'); ?>
+		<div class="main_nav">
+			<nav>
+				<a href="index.php"><img src="images/new_icon_01.png" alt=""></a>
+				<a href="">资讯动态</a>
+				&gt;
+				<a href=""><span>最新资讯</span></a>
+			</nav>
+			<h1>最新资讯</h1>
+		</div>
+		<div class="main">
+		<?php foreach($news as $v){ ?>
+			<div class="main_con">
+				<img src="<?php echo $v['n_img'] ?>" alt="">
+				<div><?php echo date('m.d',$v['n_time']) ?><span><?php echo date('Y',$v['n_time']) ?></span></div>
+				<dl>
+					<dt><h2><a href="news.php?naid=<?php echo $navcu['n_id'] ?>&nid=<?php echo $v['n_id']; ?>"><?php echo $v['n_title'] ?></a></h2></dt>
+					<dt><h3>[相关新闻]  <?php echo date('Y.m.d H:i:s',$v['n_time']) ?></h3></dt>
+					<dd>
+						<?php echo mb_replace_substr($v['n_detail'],150); ?>
+						<a href="news.php?naid=<?php echo $navcu['n_id'] ?>&nid=<?php echo $v['n_id']; ?>">&lt;查看全文&gt;</a>
+					</dd>
+				</dl>
+			</div>
+		<?php } ?>
+			
+			<nav>
+				<?php echo $page; ?>
+			</nav>
+		</div>
+		<footer>
+			<div class="contact">
+				<div class="con_left">
+					<a href="index.html">
+						<img src="images/wdlogo.png" alt="">
+					</a>
+					<p>我们全心全意为你提供最优质的服务</p>
+					<span>www.wengdo.cn</span>
+				</div>
+				<div class="con_center">
+					<p>
+						分享文章到：
+						<a href="">
+							<img src="images/new_icon_02.png" alt="">
+						</a>
+						<a href="">
+							<img src="images/new_icon_03.png" alt="">
+						</a>
+						<a href="">
+							<img src="images/new_icon_04.png" alt="">
+						</a>
+					</p>
+				</div>
+				<div class="con_right">
+					<img src="images/detailed_ew.png" alt="">
+				</div>
+			</div>
+			<div class="foot">
+				<p>粤ICP备12022584号-3</p>
+				<p>广州文豆网络科技有限公司 Copyright 2009-2015 ,All Rights Reserved wengdo</p>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>

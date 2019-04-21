@@ -1,0 +1,133 @@
+.container{
+	width:100%;
+	background:#fff;
+	margin:0 auto;
+}
+header{
+	width:100%;
+}
+header .head_nav{
+	width:100%; height:60px;
+	background:rgba(21,24,27,0.3);
+	position: fixed;
+	top:0;
+	z-index: 999;
+	line-height: 60px;
+}
+header .head_nav img{
+	float:left;
+	margin-left:98px;
+}
+header .head_nav nav{
+	float:right;
+	margin-right:98px;
+}
+header .head_nav nav a{
+	padding:19px 7px;
+	margin-left:29px;
+	color:#fff;
+	font-size:16px;
+}
+header .head_nav nav a:hover{
+	background: #bf4609;
+}
+.main_nav{
+	width:1003px; height:36px;
+	line-height: 36px;
+	margin:0 auto;
+}
+.main_nav nav,.main_nav nav a{
+	color:#4c4c4c;
+	font-size:16px;
+}
+.main_nav nav a span{
+	color:#e97520;
+}
+.main{
+	width:1003px;
+	margin:0 auto;
+	border:1px solid #ccc;
+	overflow: hidden;
+	background:#fcfcfc;
+}
+.main .main_left{
+	width:220px;
+	float:left;
+}
+.main .main_left .phone{
+	width:191px;
+	height:86px;
+	border-bottom:1px solid #ccc;
+	padding:29px 0 0 29px;
+}
+.main .main_left .phone div{
+	width:57px;
+	height:57px;
+	border:1px solid #ccc;
+	border-radius:29px;
+	overflow:hidden;
+	float:left;
+}
+.main .main_left .phone p{
+	width:57px;
+	height:83px;
+	float:left;
+	border-bottom:0;
+}
+.main .main_left p{
+	width:187px;
+	height:48px;
+	border-bottom:1px solid #ccc;
+	line-height: 48px;
+	font-size:14px;
+	color:#666;
+	padding-left:33px;
+}
+.main .main_left .p1{
+	background: #507a45;
+	color:#fff;
+}
+.main .main_right{
+	width:782px;height:545px;
+	border-left:1px solid #ccc;
+	float:left;
+	background:#fff;
+}
+.main .main_right h1{
+	width:759px; height:54px;
+	border-bottom:1px solid #ccc;
+	color:#507a45;
+	line-height: 54px;
+	font-size:18px;
+	font-weight:900;
+	padding-left:23px;
+	background:url(../images/message.jpg) no-repeat 113px 19px;
+}
+.main .main_right .txt{
+	width:250px; height:38px;
+	border:1px solid #666;
+	border-radius:5px;
+	padding-left:10px;
+}
+.main .main_right table tr{
+	height:52px;
+}
+.main .main_right table tr td:nth-of-type(1){
+	padding:0 20px;
+	text-align:right;
+}
+
+.bottom{
+	width:782px; height:68px;
+} 
+.foot{
+	width:100%; height:68px;
+	background:rgba(50,50,50,1);
+	padding-top:20px;
+	text-align: center;
+}
+.foot p{
+	color:#666;
+	font-size: 14px;
+	margin:5px 0;
+}

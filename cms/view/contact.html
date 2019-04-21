@@ -1,0 +1,59 @@
+<?php include('view/common/header.html'); ?>
+<!-- End: Header -->
+
+<!-- Start: Main -->
+<div id="main">
+    <!-- Start: Sidebar -->
+    <?php include('view/common/sidebar.html'); ?>
+    <!-- End: Sidebar -->
+    <!-- Start: Content -->
+    <section id="content">
+        <div id="topbar" class="affix">
+            <ol class="breadcrumb">
+                <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+                <li class="active">联系我们</li>
+            </ol>
+        </div>
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-10 col-lg-12 center-column">
+                    <form action="" method="post" class="cmxform">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <div class="panel-title">编辑内容</div>
+                                <div class="panel-btns pull-right margin-left">
+                                    <!-- <a href="article_list.html"
+                                       class="btn btn-default btn-gradient dropdown-toggle"><span
+                                            class="glyphicon glyphicon-chevron-left"></span></a> -->
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <div class="col-md-7">
+                                    
+                                    <div class="form-group">
+                                        <div class="input-group"><span class="input-group-addon">标题</span>
+<input type="text" name="a_title" value="<?php echo isset($about['a_title'])?$about['a_title']:''; ?>"
+                                                   class="form-control">
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="form-group col-md-12">
+<script type="text/plain" id="myEditor" style="width:100%;height:200px;"><?php echo isset($about['a_content'])?$about['a_content']:''; ?></script>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="form-group">
+                                        <input type="submit" value="提交" class="submit btn btn-blue">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    </section>
+    <!-- End: Content -->
+</div>
+<!-- End: Main -->
+<?php include('view/common/footer.html'); ?>
