@@ -1,7 +1,7 @@
 <?php include('view/common/meta.html'); ?>
 
 
-<link rel="stylesheet" href="css/new_list.css">
+<link rel="stylesheet" href="<?php echo _CSS_  ?>new_list.css">
 <link rel="stylesheet" href="include/page/css.css">
 <body>
 	<div class="container">
@@ -9,8 +9,8 @@
 		<?php include('view/common/header.html'); ?>
 		<div class="main_nav">
 			<nav>
-				<a href="index.php"><img src="images/new_icon_01.png" alt=""></a>
-				<a href="">资讯动态</a>
+				<a href="<?php echo _WEB_  ?>index.php"><img src="images/new_icon_01.png" alt=""></a>
+				<a href="<?php echo _WEB_  ?>news_list.php">资讯动态</a>
 				&gt;
 				<a href=""><span>最新资讯</span></a>
 			</nav>
@@ -19,7 +19,7 @@
 		<div class="main">
 		<?php foreach($news as $v){ ?>
 			<div class="main_con">
-				<img src="<?php echo $v['n_img'] ?>" alt="">
+				<img src="<?php echo _UPLOAD_.$v['n_img'] ?>" alt="">
 				<div><?php echo date('m.d',$v['n_time']) ?><span><?php echo date('Y',$v['n_time']) ?></span></div>
 				<dl>
 					<dt><h2><a href="news.php?naid=<?php echo $navcu['n_id'] ?>&nid=<?php echo $v['n_id']; ?>"><?php echo $v['n_title'] ?></a></h2></dt>
@@ -39,7 +39,7 @@
 		<footer>
 			<div class="contact">
 				<div class="con_left">
-					<a href="index.html">
+					<a href="<?php echo _WEB_  ?>index.php">
 						<img src="images/wdlogo.png" alt="">
 					</a>
 					<p>我们全心全意为你提供最优质的服务</p>

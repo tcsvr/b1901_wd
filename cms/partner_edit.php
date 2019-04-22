@@ -35,7 +35,7 @@ if($_POST){
     //文件上传
     if(!isset($_FILES['upload']['name']) || empty($_FILES['upload']['name'])){
         //没上传文件
-        $sql = "UPDATE wd_partner SET `p_title`={$p_title} , `p_link`={$p_link}WHERE p_id={$pid}";
+        $sql = "UPDATE wd_partner SET `p_title`='{$p_title}' , `p_link`='{$p_link}' WHERE p_id='{$pid}'";
 
 
         

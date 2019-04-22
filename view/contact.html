@@ -1,13 +1,13 @@
 <?php include('view/common/meta.html'); ?>
 
-<link rel="stylesheet" href="css/contact.css">
+<link rel="stylesheet" href="<?php echo _CSS_  ?>contact.css">
 <body>
 	<div class="container">
 		<?php include('view/common/header.html'); ?>
 		<div class="main_nav">
 			<nav>
-				<a href="contact.html"><img src="images/new_icon_01.png" alt=""></a>
-				<a href="contact.html"><span>联系我们</span></a>
+				<a href="<?php echo _WEB_  ?>index.php"><img src="images/new_icon_01.png" alt=""></a>
+				<a href="<?php echo _WEB_  ?>contact.php"><span>联系我们</span></a>
 			</nav>
 			<h1>联系我们</h1>
 		</div>
@@ -41,7 +41,7 @@
 		<footer>
 			<div class="contact">
 				<div class="con_left">
-					<a href="index.html">
+					<a href="<?php echo _WEB_  ?>index.php">
 						<img src="images/wdlogo.png" alt="">
 					</a>
 					<p>我们全心全意为你提供最优质的服务</p>
@@ -74,4 +74,4 @@
 </body>
 </html>
 <!-- 导航滚动条 -->
-<script src='js/nav_scroll.js'></script>
+<script src='<?php echo _JS_  ?>nav_scroll.js'></script>

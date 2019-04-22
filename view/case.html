@@ -3,11 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<title>文豆-案例详情页</title>
-	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
-	<script src="js/playImg.js"></script>
-	<link rel="stylesheet" href="css/reset.css">
-	<link rel="stylesheet" href="css/case.css">
-	<link rel="stylesheet" href="css/playImg.css">
+	<script type="text/javascript" src="<?php echo _JS_  ?>jquery-1.11.3.min.js"></script>
+	<script src="<?php echo _JS_  ?>playImg.js"></script>
+	<link rel="stylesheet" href="<?php echo _CSS_  ?>reset.css">
+	<link rel="stylesheet" href="<?php echo _CSS_  ?>case.css">
+	<link rel="stylesheet" href="<?php echo _CSS_  ?>playImg.css">
 </head>
 <body>
 	<div class="container">
@@ -15,8 +15,8 @@
 		<?php include('view/common/header.html'); ?>
 		<div class="main_nav">
 			<nav>
-				<a href="case.html"><img src="images/new_icon_01.png" alt=""></a>
-				<a href="case.html">案例展示</a>
+				<a href="<?php echo _WEB_  ?>index.php">"><img src="images/new_icon_01.png" alt=""></a>
+				<a href="<?php echo _WEB_  ?>case.php">案例展示</a>
 				&gt;
 				<a href=""><?php echo $statusc['ca_name'] ?></a>
 				&gt;
@@ -121,7 +121,7 @@
 </body>
 </html>
 <!-- 导航滚动条 -->
-<script src='js/nav_scroll.js'></script>
+<script src='<?php echo _JS_  ?>nav_scroll.js'></script>
 <script>
 	// 侧边导航条（右边）
 	var aside=document.getElementsByTagName('aside')[0];
