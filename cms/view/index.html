@@ -20,15 +20,15 @@
 				<h2 class="page-header margin-top-none">个人信息</h2>
 				<table class="table">
 					<tr>
-					<td colspan="2">您好，Admin</td>
+					<td colspan="2">您好，<?php echo $userinfo['admin_username'] ?></td>
 					</tr>
 					<tr>
 					<td width="120">最后登录时间:</td>
-					<td><?php echo date('Y-m-d H:i',$time); ?></td>
+					<td><?php echo date('Y-m-d H:i',$userinfo['lasttime']); ?></td>
 					</tr>
 					<tr>
 					<td>最后登录IP:</td>
-					<td><?php echo $_SERVER['REMOTE_ADDR']; ?></td>
+					<td><?php echo $userinfo['lastip']; ?></td>
 					</tr>
 				</table>
 
@@ -36,15 +36,15 @@
 				<table class="table">
 				  <tr>
 				    <td width="100">操作系统：</td>
-				    <td><?php echo PHP_OS; ?></td>
+				    <td><?php echo $userinfo['os']; ?></td>
 				  </tr>
 				  <tr>
 				    <td>PHP 版本:</td>
-				    <td><?php echo PHP_VERSION; ?></td>
+				    <td><?php echo$userinfo['pv']; ?></td>
 				  </tr>
 				  <tr>
 				    <td>MySQL 版本:</td>
-				    <td><?php echo mysql_get_server_info(); ?></td>
+				    <td><?php echo $userinfo['mv']; ?></td>
 				  </tr>
 				</table>
 			</div>

@@ -29,9 +29,9 @@ header .head_nav nav a{
 	color:#fff;
 	font-size:16px;
 }
-header .head_nav nav a img{
-	/*margin:0px;*/
-}
+/* header .head_nav nav a img{
+	margin:0px;
+} */
 header .head_nav nav a:hover{
 	background: #bf4609;
 }
@@ -103,7 +103,8 @@ header .head_nav nav a:hover{
 .log .pas{
 	width:250px; height:33px;
 }
-.log .pas div{
+.log .pas .code{
+	display: block;
 	width:90px; height:33px;
 	border:1px solid #7a7a7a;
 	float:left;
@@ -130,12 +131,12 @@ header .head_nav nav a:hover{
 	float:right;
 }
 .foot{
-	position: absolute;
-	left:0; bottom:0;
-	width:100%; height:68px;
+
+	width:100%; height:78px;
 	background:rgba(2,2,2,0.8);
-	padding-top:20px;
+	padding-top:45px;
 	text-align: center;
+
 }
 .foot p{
 	color:#666;

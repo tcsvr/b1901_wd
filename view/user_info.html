@@ -1,50 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>文豆-个人信息</title>
-	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
-	<script src="js/playImg.js"></script>
-	<link rel="stylesheet" href="css/reset.css">
-	<link rel="stylesheet" href="css/user_info.css">
-	<link rel="stylesheet" href="css/playImg.css">
-</head>
+<?php include('view/common/meta.html'); ?>
+<link rel="stylesheet" href="css/user_info.css">
 <body>
 	<div class="container">
-		<header>
-			<div class="head_nav" id="head_scroll">
-				<a href="index.html">
-					<img src="images/logo_01.png" alt="">
-				</a>
-				<nav>
-					<a href="index.html">网站首页</a>
-					<a href="case_list.html">案例展示</a>
-					<a href="about.html">关于我们</a>
-					<a href="new_list.html">资讯动态</a>
-					<a href="contact.html">联系我们</a>
-				</nav>
-			</div>
-			<div class="banner">
-				<div id="con">
-					<ul>
-						<li><img id="img_one" src="images/banner_01.jpg" alt=""></li>
-						<li><img src="images/banner_02.jpg" alt=""></li>
-						<li><img src="images/banner_03.jpg" alt=""></li>
-						<li><img src="images/banner_02.jpg" alt=""></li>
-						<li><img src="images/banner_01.jpg" alt=""></li>
-					</ul>
-					<a id="prev" href="javascript:;"><img src="images/ban_prev.png" alt=""></a>
-					<a id="next" href="javascript:;"><img src="images/ban_next.png" alt=""></a>
-					<ol>
-						<li class="oli"></li>
-						<li></li>
-						<li></li>
-						<li></li>
-					</ol>
-				</div>
-			</div>
-		</header>
-		<div class="main_nav">
+			<?php include('view/common/header.html'); ?>
+			<div class="main_nav">
 			<nav>
 				<a href="index.html">首页</a>
 				&gt;
@@ -55,14 +14,14 @@
 			<div class="main_left">
 				<div class="phone">
 					<div><img src="images/user_01.gif" alt=""></div>
-					<p>username</p>
+					<p><?php echo $userinfo['u_name'] ?></p>
 				</div>
 				<p class="p1">基本信息</p>
 				<p>客户留言</p>
 			</div>
 			<div class="main_right">
 				<h1>基本信息</h1>
-				<form action="">
+				<form action="" method="post">
 				<table>
 					<tr>
 						<td>用户名</td>
@@ -105,6 +64,7 @@
 						</td>
 					</tr>
 				</table>
+				<input class="" type="button" value="提交">
 				</form>
 			</div>
 		</div>

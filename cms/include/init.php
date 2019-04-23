@@ -2,8 +2,14 @@
 header('content-type:text/html; charset=utf-8');
 
 
+session_start();
 //包含函数库文件
 include('include/function.php');
+
+if(!isset($_SESSION['islog']) || empty($_SESSION['islog'])){
+    alert('请先登陆','login.php');
+}
+
 //包含配置文件
 include('include/config.php');
 include_once('include/page/page.php');

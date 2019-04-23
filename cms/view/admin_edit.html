@@ -1,0 +1,100 @@
+
+<?php include('view/common/header.html'); ?>
+<!-- End: Header -->
+
+<!-- Start: Main -->
+<div id="main">
+    <!-- Start: Sidebar -->
+    <?php include('view/common/sidebar.html'); ?>
+    <!-- End: Sidebar -->
+    <!-- Start: Content -->
+    <section id="content">
+        <div id="topbar" class="affix">
+            <ol class="breadcrumb">
+                <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+                <li class="active">修改管理员</li>
+            </ol>
+        </div>
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-10 col-lg-8 center-column">
+                    <form action="" method="post" class="cmxform" enctype="multipart/form-data">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <div class="panel-title">修改管理员</div>
+                                <div class="panel-btns pull-right margin-left">
+                                    <a href="admin_list.php"
+                                        class="btn btn-default btn-gradient dropdown-toggle"><span
+                                            class="glyphicon glyphicon-chevron-left"></span></a>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <div class="col-md-7">
+                                    <div class="form-group">
+                                        <div class="input-group"><span class="input-group-addon">管理员用户名</span>
+                                            <input type="text"  disabled="disabled" name="admin_username" value="<?php echo $admin['admin_username'] ?>" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="input-group"><span class="input-group-addon">修改真实姓名</span>
+                                            <input type="text" name="admin_real" value="<?php echo $admin['admin_real'] ?>" class="form-control">
+                                        </div>
+                                    </div>
+        
+                                    <div class="form-group">
+                                        <div class="input-group"><span class="input-group-addon">&nbsp;现在的&nbsp;密码&nbsp;</span>
+                                            <input type="password" name="password" value="" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="input-group"><span class="input-group-addon">&nbsp;修&nbsp;改&nbsp;&nbsp;密&nbsp;码&nbsp;</span>
+                                            <input type="password" name="changepassword" value="" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="input-group"><span class="input-group-addon">修改密码确认</span>
+                                            <input type="password" name="rechangepassword" value="" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-12">
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="form-group">
+                                        <input type="submit" value="提交" class="submit btn btn-blue">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    </section>
+    <!-- End: Content -->
+</div>
+<!-- End: Main -->
+<?php include('view/common/footer.html'); ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

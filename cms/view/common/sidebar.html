@@ -46,10 +46,15 @@
       <li>
         <a href="contact.php"><span class="glyphicons glyphicon-list"></span><span class="sidebar-title">联系我们</span></a>
       </li>
-      <li>
-        <a href="user_list.html"><span class="glyphicons glyphicon-list"></span><span
-            class="sidebar-title">系统管理员</span></a>
-      </li>
+      <?php if($_SESSION['adminid']==1){ ?>
+
+        <li>
+          <a href="admin_list.php"><span class="glyphicons glyphicon-list"></span><span
+              class="sidebar-title">系统管理员</span></a>
+        </li>   
+        
+      <?php } ?>
+
     </ul>
   </div>
 </aside>
