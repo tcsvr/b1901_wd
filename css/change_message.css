@@ -101,7 +101,7 @@ header .head_nav nav a:hover{
 	font-size:18px;
 	font-weight:900;
 	padding-left:23px;
-	background:url(../images/message.jpg) no-repeat 113px 19px;
+	/* background:url(../images/message.jpg) no-repeat 113px 19px; */
 }
 .main .main_right .txt{
 	width:250px; height:38px;
@@ -116,17 +116,19 @@ header .head_nav nav a:hover{
 	padding:0 20px;
 	text-align:right;
 }
-.main .main_right table tr .submit input{
-	width: 118px; height: 38px;
+.main .main_right table tr .cswbtn{
+	width: 100px; height: 38px;
 	background: #507a45;
 	border:1px solid #507a45;
 	border-radius:5px;
 	color:#fff;
 }
-.main .main_right table tr .submit a{
-	padding:8px 30px;
+.cswa{
+	/* padding:0 10px; */
+	display: inline-block;
+	height: 38px;
 	background: #b94004;
-	border:1px solid #b94004;
+	line-height: 38px;
 	border-radius:5px;
 	color:#fff;
 	margin-left:21px;
@@ -145,4 +147,13 @@ header .head_nav nav a:hover{
 	color:#666;
 	font-size: 14px;
 	margin:5px 0;
+}
+#tip, #atip, #ptip {
+    color: red;
+    text-align: left;
+    text-indent: 6em;
+    font-size: .5em;
+}
+.main .main_right table tr.cswtr{
+	height: 20px;
 }

@@ -1,72 +1,109 @@
 <?php include('view/common/meta.html'); ?>
-<link rel="stylesheet" href="css/change_message.css">
+<link rel="stylesheet" href="<?php echo _CSS_; ?>change_message.css">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/jq/jquery-ui.min.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
 <body>
 	<div class="container">
 			<?php include('view/common/header.html'); ?>
 		<div class="main_nav">
 			<nav>
-				<a href="index.html">首页</a>
+				<a href="index.php">首页</a>
 				&gt;
-				<a href="user_info.html">用户中心</a>
+				<a href="user_info.php">用户中心</a>
 			</nav>
 		</div>
 		<div class="main">
 			<div class="main_left">
-				<div class="phone">
+				<div class="phone">		
+
 					<div><img src="images/user_01.gif" alt=""></div>
-					<p>username</p>
+					
+					<p><?php echo $userinfo['u_name'] ?></p>
 				</div>
-				<p class="p1">基本信息</p>
-				<p>客户留言</p>
-			</div>
+				<a href="user_info.php"><p class="p1">基本信息</p></a> 
+				<a href="message.php"><p>客户留言 </p>
+			</div></a>
 			<div class="main_right">
-				<h1>基本信息</h1>
-				<form action="">
+				<h1>基本信息修改</h1>
+				<form action="" method="POST">
 					<table>
 						<tr>
 							<td>用户名</td>
 							<td>
-								<input class="txt" value="<?php echo $userinfo['u_name'] ?>" type="text" placeholder="请输入用户名" name="" id="">
+								<input class="txt" value="<?php echo $userinfo['u_name'] ?>" type="text" placeholder="请输入用户名" name="u_name" id="">
 							</td>
 						</tr>
 						<tr>
-							<td>真实姓名</td>
+							<td>真实姓名
+								
+							</td>
 							<td>
-								<input class="txt" type="text" value="<?php echo $userinfo['u_real'] ?>" placeholder="请输入姓名" name="" id="">
+								<input class="txt" type="text" value="<?php echo $userinfo['u_real'] ?>" placeholder="请输入姓名" name="u_real" id="">
 							</td>
 						</tr>
+
+						<tr class="cswtr">
+								<td colspan="2">
+									<p id="tip"></p>
+								</td>
+							</tr>
+
 						<tr>
 							<td>性别</td>
 							<td>
-								<input type="radio" name="sex" id="man" <?php echo $userinfo['u_sex'] == 1?'checked="checked"':'' ; ?> value="1">
+								<input type="radio" name="u_sex" id="man" <?php echo $userinfo['u_sex'] == 1?'checked="checked"':'' ; ?> value="1">
 								<label for="man">男</label>
 								&nbsp;&nbsp;&nbsp;&nbsp;
-								<input type="radio" name="sex" id="woman" <?php echo $userinfo['u_sex'] == 0?'checked="checked"':'' ; ?> value="0">
+								<input type="radio" name="u_sex" id="woman" <?php echo $userinfo['u_sex'] == 0?'checked="checked"':'' ; ?> value="0">
 								<label for="woman">女</label>
 							</td>
 						</tr>
 						<tr>
 							<td>手机</td>
 							<td>
-								<input class="txt" type="text" value="<?php echo $userinfo['u_phone'] ?>" placeholder="请输入手机号" name="" id="">
+								<input class="txt" type="text" value="<?php echo $userinfo['u_phone'] ?>" placeholder="请输入手机号" name="u_phone" id="">
 							</td>
 						</tr>
+
+						<tr class="cswtr">
+								<td colspan="2">
+									<p id="ptip"></p>
+								</td>
+							</tr>
+
 						<tr>
 							<td>E-mail</td>
 							<td>
-								<input class="txt" type="text" value="<?php echo $userinfo['u_email'] ?>" placeholder="请输入邮箱" name="" id="">
+								<input class="txt" type="text" value="<?php echo $userinfo['u_email'] ?>" placeholder="请输入邮箱" name="u_email" id="">
 							</td>
 						</tr>
+
+						<tr class="cswtr">
+								<td colspan="2">
+									<p id="atip"></p>
+								</td>
+							</tr>
+
+
 						<tr>
 							<td>生日</td>
 							<td>
-								<input class="txt" type="text" value="<?php echo $userinfo['u_birthday'] ?>" placeholder="请输入您的生日" name="" id="">
+								<input class="txt" readonly="readonly" type="text" value="<?php echo $userinfo['u_birthday'] ?>" placeholder="请输入您的生日" name="u_birthday" id="datepicker">
 							</td>
 						</tr>
 						<tr>
 							<td>&emsp;</td>
-							<td ><input type="submit" value="保存">
-							<a href="change_password.php">修改密码</a></td>
+							<td >
+								<input type="submit" class="cswbtn" value="保存">
+								<a  class="cswa" href="change_password.php">修改密码</a>
+							</td>
 						</tr>
 					</table>
 				</form>
@@ -82,3 +119,43 @@
 </html>
 <!-- 导航滚动条 -->
 <script src='js/nav_scroll.js'></script>
+<script src='js/chang_message.js'></script>
+<script>
+
+		( function( factory ) {
+		if ( typeof define === "function" && define.amd ) {
+	
+			// AMD. Register as an anonymous module.
+			define( [ "../widgets/datepicker" ], factory );
+		} else {
+	
+			// Browser globals
+			factory( jQuery.datepicker );
+		}
+	}( function( datepicker ) {
+	
+	datepicker.regional[ "zh-CN" ] = {
+		closeText: "关闭",
+		prevText: "&#x3C;上月",
+		nextText: "下月&#x3E;",
+		currentText: "今天",
+		monthNames: [ "一月","二月","三月","四月","五月","六月",
+		"七月","八月","九月","十月","十一月","十二月" ],
+		monthNamesShort: [ "一月","二月","三月","四月","五月","六月",
+		"七月","八月","九月","十月","十一月","十二月" ],
+		dayNames: [ "星期日","星期一","星期二","星期三","星期四","星期五","星期六" ],
+		dayNamesShort: [ "周日","周一","周二","周三","周四","周五","周六" ],
+		dayNamesMin: [ "日","一","二","三","四","五","六" ],
+		weekHeader: "周",
+		dateFormat: "yy-mm-dd",
+		firstDay: 1,
+		isRTL: false,
+		showMonthAfterYear: true,
+		yearSuffix: "年" };
+	datepicker.setDefaults( datepicker.regional[ "zh-CN" ] );
+	
+	return datepicker.regional[ "zh-CN" ];
+	
+	} ) );
+	
+	</script>

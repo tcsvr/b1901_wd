@@ -18,8 +18,9 @@
 					</div>
 					<p><?php echo $userinfo['u_name'] ?></p>
 				</div>
-				<p class="p1">基本信息</p>
-				<p>客户留言</p>
+				<a href="user_info.php"><p class="p1">基本信息</p></a> 
+				<a href="message.php"><p>客户留言 </p>
+
 			</div>
 			<div class="main_right">
 				<h1><a href="change_message.php" title="修改基本信息">基本信息&emsp;<img src="images/message.jpg" alt="" ></a></h1>
@@ -28,41 +29,41 @@
 					<tr>
 						<td>用户名</td>
 						<td>
-							<input class="txt" value="<?php echo $userinfo['u_name'] ?>" type="text" placeholder="请输入用户名" name="" id="">
+							<input  readonly="readonly" class="txt" value="<?php echo $userinfo['u_name'] ?>" type="text" placeholder="请输入用户名" name="" id="">
 						</td>
 					</tr>
 					<tr>
 						<td>真实姓名</td>
 						<td>
-							<input class="txt" type="text" value="<?php echo $userinfo['u_real'] ?>" placeholder="请输入姓名" name="" id="">
+							<input  readonly="readonly" class="txt" type="text" value="<?php echo $userinfo['u_real'] ?>" placeholder="请输入姓名" name="" id="">
 						</td>
 					</tr>
 					<tr>
 						<td>性别</td>
 						<td>
-							<input type="radio" name="sex" id="man" <?php echo $userinfo['u_sex'] == 1?'checked="checked"':'' ; ?> value="1">
+							<input  disabled="disabled"  type="radio" name="sex" id="man" <?php echo $userinfo['u_sex'] == 1?'checked="checked"':'' ; ?> value="1">
 							<label for="man">男</label>
 							&nbsp;&nbsp;&nbsp;&nbsp;
-							<input type="radio" name="sex" id="woman" <?php echo $userinfo['u_sex'] == 0?'checked="checked"':'' ; ?> value="0">
+							<input  disabled="disabled"  type="radio" name="sex" id="woman" <?php echo $userinfo['u_sex'] == 0?'checked="checked"':'' ; ?> value="0">
 							<label for="woman">女</label>
 						</td>
 					</tr>
 					<tr>
 						<td>手机</td>
 						<td>
-							<input class="txt" type="text" value="<?php echo $userinfo['u_phone'] ?>" placeholder="请输入手机号" name="" id="">
+							<input  readonly="readonly" class="txt" type="text" value="<?php echo $userinfo['u_phone'] ?>" placeholder="请输入手机号" name="" id="">
 						</td>
 					</tr>
 					<tr>
 						<td>E-mail</td>
 						<td>
-							<input class="txt" type="text" value="<?php echo $userinfo['u_email'] ?>" placeholder="请输入邮箱" name="" id="">
+							<input  readonly="readonly" class="txt" type="text" value="<?php echo $userinfo['u_email'] ?>" placeholder="请输入邮箱" name="" id="">
 						</td>
 					</tr>
 					<tr>
 						<td>生日</td>
 						<td>
-							<input class="txt" type="text" value="<?php echo $userinfo['u_birthday'] ?>" placeholder="请输入您的生日" name="" id="">
+							<input  readonly="readonly" class="txt" type="text" value="<?php echo $userinfo['u_birthday'] ?>" placeholder="请输入您的生日" name="" id="">
 						</td>
 					</tr>
 				</table>
