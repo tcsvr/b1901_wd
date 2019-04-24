@@ -38,11 +38,12 @@ if($_POST){
         $pass = md5($_POST['pass']);
     }
     $sql = "INSERT INTO wd_user (`u_name`,`u_password`) VALUES ('{$username}','{$pass}')";
-    
+
     $bool = mysql_query($sql);
     if(!$bool && mysql_affected_rows()){
     echo '注册失败';exit;
     }else{
+
         $sql = "SELECT * FROM wd_user WHERE u_name = '{$username}'";
         $userinfo = getOne($sql);
         pre($userinfo);

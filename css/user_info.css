@@ -101,7 +101,7 @@ header .head_nav nav a:hover{
 	font-size:18px;
 	font-weight:900;
 	padding-left:23px;
-	background:url(../images/message.jpg) no-repeat 113px 19px;
+	/* background:url(../images/message.jpg) no-repeat 113px 19px; */
 }
 .main .main_right .txt{
 	width:250px; height:38px;
