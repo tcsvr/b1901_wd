@@ -6,7 +6,6 @@ $pid = isset($_GET['pid'])?$_GET['pid']:0;
 
 $sql = "SELECT * FROM wd_partner WHERE p_id={$pid}";
 $partner = getOne($sql);
-// pre($partner);
 
 $deleteImg = $partner['p_img'];
 $deleteThumb = $partner['p_thumb'];
@@ -14,11 +13,9 @@ $deleteThumb = $partner['p_thumb'];
 
 
 
-// pre($case);
 
 //提交后执行
 if($_POST){
-    // pre($_POST);
 
     if(!isset($_POST['p_title']) || empty($_POST['p_title'])){
 		alert('请填写标题');
@@ -31,7 +28,6 @@ if($_POST){
     $p_title = $_POST['p_title'];
     $p_link = $_POST['p_link'];
 
-    // pre($_POST);
     //文件上传
     if(!isset($_FILES['upload']['name']) || empty($_FILES['upload']['name'])){
         //没上传文件
@@ -68,9 +64,6 @@ if($_POST){
         
         $p_thumb = thumb_img($img,$son_width,$son_height,$url,$thumpath); //我们要的数据 缩略图
         
-      
-        
-        //
         $sql = "UPDATE wd_partner SET `p_img`='{$p_img}',`p_thumb`='{$p_thumb}',`p_title`='{$p_title}' WHERE p_id='{$pid}'";
 
         
@@ -87,11 +80,6 @@ if($_POST){
 
 }
 
-
-
-
-
-// pre($case);
 
 
 

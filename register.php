@@ -8,8 +8,12 @@ if($_POST){
     }
     //用户名要验证和清除左右空格
     $username = trim($_POST['username']);
-    // $username = "SELECT u_id FROM wd_user WHERE u_name = '{$username}'"
-
+    $sqln = "SELECT u_id FROM wd_user WHERE u_name = '{$username}'";
+    $reusername = getOne($sqln);
+    // var_dump($reusername);exit;
+    if($reusername){
+        alert('用户名已存在');
+    }
 
     $status = preg_match("/\W+/",$username,$match);
     if($status){
@@ -33,28 +37,24 @@ if($_POST){
     }else{
         $pass = md5($_POST['pass']);
     }
-$sql = "INSERT INTO wd_user (`u_name`,`u_password`) VALUES ('{$username}','{$pass}')";
-$sql = "SELECT * FROM wd_user WHERE u_name = '{$username}'";
-// pre($sql);
-$userinfo = getOne($sql);
+    $sql = "INSERT INTO wd_user (`u_name`,`u_password`) VALUES ('{$username}','{$pass}')";
+    
+    $bool = mysql_query($sql);
+    if(!$bool && mysql_affected_rows()){
+    echo '注册失败';exit;
+    }else{
+        $sql = "SELECT * FROM wd_user WHERE u_name = '{$username}'";
+        $userinfo = getOne($sql);
+        pre($userinfo);
 
-// $userinfo = getOne($sql);
-// pre($userinfo);
+        setcookie('islog','1');
+        // 存用户名
+        setcookie('username',$userinfo['u_name']);
+        // 存用户ID
+        setcookie('uid',$userinfo['u_id']);
 
-$bool = mysql_query($sql);
-if(!$bool && mysql_affected_rows()){
-echo '注册失败';exit;
-}else{
-
-echo '注册成功';
-setcookie('islog','1');
-// 存用户名
-setcookie('username',$userinfo['u_name']);
-// 存用户ID
-setcookie('uid',$userinfo['u_id']);
-
-header('Location:user_info.php');
-}
+        header('Location:user_info.php');
+    }
 
 
 }

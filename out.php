@@ -5,5 +5,5 @@ setcookie('username','',time()-10);
 setcookie('uid','',time()-10);
 
 
-include('index.php');
+header('location:index.php');
 ?>

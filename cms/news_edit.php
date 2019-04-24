@@ -6,18 +6,15 @@ $nid = isset($_GET['nid'])?$_GET['nid']:0;
 
 $sql = "SELECT * FROM wd_news WHERE n_id='{$nid}'";
 $news = getOne($sql);
-// pre($news);
 $deleteImg = $news['n_img'];
 $deleteThumb = $news['n_thumb'];
 
 
 
 
-// pre($news);
 
 //提交后执行
 if($_POST){
-    // pre($_POST);
     if(!isset($_POST['n_title']) || empty($_POST['n_title'])){
 		alert('请填写标题');
 	}
@@ -29,7 +26,6 @@ if($_POST){
     $n_time = $_POST['n_time'];
     $n_detail = $_POST['editorValue'];
 
-    // pre($_POST);
     //文件上传
     if(!isset($_FILES['upload']['name']) || empty($_FILES['upload']['name'])){
         //没上传文件
@@ -80,12 +76,6 @@ if($_POST){
 
 
 }
-
-
-
-
-
-// pre($news);
 
 
 

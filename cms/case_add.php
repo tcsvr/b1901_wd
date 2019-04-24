@@ -6,7 +6,6 @@ include('include/init.php');
 if($_POST){
   if($_POST['ca_id']=='0'){
     alert('请选择分类');
-    // $disp = 'block';
   }
 
     if(!isset($_POST['c_title']) || empty($_POST['c_title'])){
@@ -61,18 +60,7 @@ if($_POST){
 	}
 
 
-
-
-
-
-
 }
-
-
-
-
-
-
 
 
 include('view/case_add.html');

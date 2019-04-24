@@ -9,7 +9,6 @@ $news = getAll($sql);
 
 
 
-//
 if($_POST){
     $nidarr = $_POST['nidarr'];
     $nidstr = implode(',',$nidarr);

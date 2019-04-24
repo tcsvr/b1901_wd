@@ -6,10 +6,6 @@ include('include/init.php');
 $sql = "SELECT * FROM wd_banner  ORDER BY b_id ASC";
 $banner = getAll($sql);
 
-
-
-
-//
 if($_POST){
     $bidarr = $_POST['bidarr'];
     $bidstr = implode(',',$bidarr);

@@ -11,21 +11,7 @@ mysql_set_charset($dbcharset);
 //选择数据库
 mysql_select_db($dbtable)or die('选择失败！');
 
-// 密码的另一中方式 密码加盐
-
-// 自己设置的密码 md5();
-// md5(123456); //e10adc3949ba59abbe56e057f20f883e
-
-// 盐巴  随机数     md5（随机数）
-//  md5(rand(10000,99999)); // df10863517e44afdebb8127f17fc3d24
-// 最后  吧自己设置的密码.盐巴  md5(md5)
-// echo md5('e10adc3949ba59abbe56e057f20f883e'.'df10863517e44afdebb8127f17fc3d24');
-
-//password 最后 1422915cacf9b9e97860f9dfbdca53da
-//verify   盐巴 df10863517e44afdebb8127f17fc3d24
-// exit;
 if($_POST){
-    // pre($_POST);
     if(!isset($_POST['username']) || empty($_POST['username'] )){
         alert('请输入账号');
     }
@@ -51,10 +37,8 @@ if($_POST){
 
     $sql = "SELECT * FROM wd_admin WHERE admin_username = '{$username}'";
     $userinfo = getOne($sql);
-    // pre($userinfo);
     if($userinfo){
         $verify = $userinfo['verify'];
-        // pre($verify);
         $pass = md5($password.$verify);
         if($pass == $userinfo['admin_password']){
             $_SESSION['islog'] = '1';

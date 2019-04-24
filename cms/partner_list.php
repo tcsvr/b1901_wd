@@ -9,7 +9,6 @@ $partner = getAll($sql);
 
 
 
-//
 if($_POST){
     $pidarr = $_POST['pidarr'];
     $pidstr = implode(',',$pidarr);

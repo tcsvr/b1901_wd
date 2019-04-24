@@ -13,7 +13,6 @@ $deleteThumb = $case['c_thumb'];
 
 
 
-// pre($case);
 
 //提交后执行
 if($_POST){
@@ -33,7 +32,6 @@ if($_POST){
     $c_title = $_POST['c_title'];
     $c_detail = $_POST['editorValue'];
 
-    // pre($_POST);
     //文件上传
     if(!isset($_FILES['upload']['name']) || empty($_FILES['upload']['name'])){
         //没上传文件
@@ -68,7 +66,6 @@ if($_POST){
         
         $c_thumb = thumb_img($img,$son_width,$son_height,$url,$thumpath); //我们要的数据 缩略图
         
-        //
         $sql = "UPDATE wd_case SET `c_title`='{$c_title}',`c_img`='{$c_img}',`c_thumb`='{$c_thumb}',`c_detail`='{$c_detail}',`c_isshow`={$c_isshow},`ca_id`={$ca_id} WHERE c_id={$cid}";
 
         
@@ -85,11 +82,6 @@ if($_POST){
 
 }
 
-
-
-
-
-// pre($case);
 
 
 

@@ -34,7 +34,6 @@ if($_POST){
     }
 
 }
-// pre($category);
 
 
 include('view/category_edit.html');

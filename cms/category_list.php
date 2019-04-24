@@ -25,7 +25,6 @@ if($_POST){
 }
 
 
-// pre($idstr);
 
 
 

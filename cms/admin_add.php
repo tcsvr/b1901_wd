@@ -26,12 +26,12 @@ if($_POST){
 	if($_POST['password']!=$_POST['repassword']){
 		alert('密码不一致');
 	}
-	// 判断用户是否已存在
 	// 获取数据
 	$username = trim($_POST['admin_username']);
 	$real = isset($_POST['real'])?$_POST['real']:'';
 	$sql = "SELECT * FROM wd_admin WHERE admin_username='{$username}'";
-	$ex = getOne($sql);
+    $ex = getOne($sql);
+    $time = time();
 	if($ex){
 		alert('账号已存在');
 	}
@@ -39,29 +39,14 @@ if($_POST){
 	$verify = md5(rand(10000,99999));
 	$password = md5($pass.$verify);
 
-	$sql = "INSERT INTO wd_admin (`admin_username`,`admin_real`,`admin_password`,`verify`) VALUES 
-    ('{$username}','{$real}','{$password}','{$verify}')";
+	$sql = "INSERT INTO wd_admin (`admin_username`,`admin_real`,`admin_password`,`verify`,`lasttime`) VALUES 
+    ('{$username}','{$real}','{$password}','{$verify}','{$time}')";
     $bool = mysql_query($sql);
-    // var_dump($bool);exit;
 	if($bool && mysql_affected_rows()){
-		// alert('');
 		header('location:admin_list.php');
 	}
 	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

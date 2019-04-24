@@ -34,11 +34,5 @@ if($_POST){
 
 
 
-
-
-
-
-
-
 include('view/category_add.html');
 ?>

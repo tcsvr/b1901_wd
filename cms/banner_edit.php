@@ -7,27 +7,18 @@ $bid = isset($_GET['bid'])?$_GET['bid']:0;
 $sql = "SELECT * FROM wd_banner WHERE b_id={$bid}";
 $banner = getOne($sql);
 
-// pre($banner);
-// [b_id] => 7
-//     [b_img] => 2019/04/155583566412738.jpg
-//     [b_thumb] => 2019-04/21/155583566412738.jpg
-//     [b_isshow] => 1
-// pre($banner['b_img']);
 $deleteImg = $banner['b_img'];
 $deleteThumb = $banner['b_thumb'];
 
 
 
 
-// pre($case);
 
 //提交后执行
 if($_POST){
-    // pre($_POST);
     //简单的数据
     $b_isshow = isset($_POST['b_isshow'])?$_POST['b_isshow']:0;
 
-    // pre($_POST);
     //文件上传
     if(!isset($_FILES['upload']['name']) || empty($_FILES['upload']['name'])){
         //没上传文件
@@ -62,7 +53,6 @@ if($_POST){
         
         $b_thumb = thumb_img($img,$son_width,$son_height,$url,$thumpath); //我们要的数据 缩略图
         
-        //
         $sql = "UPDATE wd_banner SET `b_img`='{$b_img}',`b_thumb`='{$b_thumb}' , `b_isshow`={$b_isshow} WHERE b_id={$bid}";
 
         
@@ -73,17 +63,9 @@ if($_POST){
     }else{
         alert('修改失败！','banner_edit.php?bid='.$bid);
     }
- 
-    
-
 
 }
 
-
-
-
-
-// pre($case);
 
 
 

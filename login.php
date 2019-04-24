@@ -1,5 +1,6 @@
 <?php
 include('include/init.php');
+session_start();
 if($_POST){
     // 判断是否为空
 	if(!isset($_POST['username']) || empty($_POST['username'])){
@@ -16,7 +17,7 @@ if($_POST){
 	}
 	// 获取数据
 	$code = $_POST['code'];
-	$cookiecode = $_COOKIE['code'];
+	$cookiecode = $_SESSION['code'];
 
 	if($code!=$cookiecode){
 		alert('请输入正确的验证码！');
@@ -24,11 +25,9 @@ if($_POST){
 		// 获取数据
 		$user = trim($_POST['username']);
 		$pass = md5($_POST['pass']);
-		// 判断有没有注册有两种方式：
-		// 1 简单 直接
+		// 判断有没有注册：
 		$sql = "SELECT * FROM wd_user WHERE `u_name`='{$user}' AND `u_password`='{$pass}'";
 		$userinfo = getOne($sql);
-        // pre($userinfo);
 		if($userinfo){
 			// 登录成功
 			echo '登录成功';
@@ -42,7 +41,6 @@ if($_POST){
 		}else{
 			alert('用户名或密码错误');
 		}
-		// 2  分开判断
 
 	}
 

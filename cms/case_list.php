@@ -9,7 +9,6 @@ $catelist = getAll($sql);
 
 
 
-//
 if($_POST){
     $idarr = $_POST['idarr'];
     $idstr = implode(',',$idarr);

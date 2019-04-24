@@ -15,7 +15,6 @@ $userinfo['pv'] = PHP_VERSION;
 $userinfo['mv'] = mysql_get_server_info();
 
 
-// pre($userinfo);
 
 
 

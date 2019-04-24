@@ -2,7 +2,6 @@
 include('include/init.php');
 
 
-//删除
 $pid = isset($_GET['pid'])?$_GET['pid']:0;
 
 $sql = "SELECT `p_img`,`p_thumb` FROM wd_partner WHERE p_id={$pid}";

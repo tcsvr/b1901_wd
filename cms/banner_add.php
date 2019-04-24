@@ -33,25 +33,19 @@ if($_POST){
         $b_thumb = thumb_img($img,$son_width,$son_height,$url,$thumpath); //我们要的数据 缩略图
         
     }
-    //
+
     $sql = "INSERT INTO wd_banner
     (`b_img`,`b_thumb`,`b_isshow`)
     VALUES
     ('{$b_img}','{$b_thumb}','{$b_isshow}')";
-    //
+
     $bool = mysql_query($sql);
-    //
     if($bool && mysql_affected_rows()){
 		header('Location:banner_list.php');
 	}else{
 
-    // exit;
 		alert('添加失败！','banner_add.php');
 	}
-
-
-
-
 
 
 }

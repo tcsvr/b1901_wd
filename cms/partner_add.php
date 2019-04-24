@@ -2,7 +2,6 @@
 include('include/init.php');
 
 
-//
 if($_POST){
 
     if(!isset($_POST['p_title']) || empty($_POST['p_title'])){
@@ -47,17 +46,12 @@ if($_POST){
     ('{$p_img}','{$p_thumb}','{$p_title}','{$p_link}')";
     
     $bool = mysql_query($sql);
-    // var_dump($bool);
-    // exit;
     if($bool && mysql_affected_rows()){
         header('Location:partner_list.php');
 	}else{
 
 		alert('添加失败！','partner_add.php');
 	}
-
-
-
 
 
 

@@ -47,7 +47,6 @@ if($_POST){
 
 
 
-// pre($nav);
 
 
 
