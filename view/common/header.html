@@ -1,3 +1,8 @@
+<style>
+    .cswbgc{
+        background-color: #bf4609;
+    }
+</style>
 <header>
     <div class="head_nav" id="head_scroll">
         <a href="index.php">
@@ -5,7 +10,7 @@
         </a>
         <nav>
             <?php foreach($nav as $v){ ?>
-            <a href="<?php echo $v['n_link']; ?>?naid=<?php echo $v['n_id'] ?>&caid=<?php echo $status['ca_id']; ?>"><?php echo $v['n_name'] ?></a>
+            <a <?php echo ($naid==$v['n_id'])?'class="cswbgc"':''; ?> href="<?php echo $v['n_link']; ?>?naid=<?php echo $v['n_id'] ?>&caid=<?php echo $status['ca_id']; ?>"><?php echo $v['n_name'] ?></a>
             <?php } ?>
             <?php if(!isset($_COOKIE['islog'])) { ?>
             <a href="login.php">登陆</a>

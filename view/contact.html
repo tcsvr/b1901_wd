@@ -13,21 +13,26 @@
 		</div>
 		<div class="main">
 			<div class="main_left">
+
 				<?php echo $contact['a_content']; ?>
 				
 			</div>
 			<div class="main_right">
-				<form action="">
+				<form action="" method="post">
 					<div>
 					<p>欢迎来电咨询或者表单联系我们/Contact us</p>
 					<p>您的姓名：</p>
-					<input type="text" name="" id="">
+					<input type="text" name="m_name"   value="<?php echo isset($userinfo['u_name'] )?$userinfo['u_name']:'';?>"  id="">
 					<p>您的邮箱：</p>
-					<input type="text" name="" id="">
+					<input type="text" name="m_email"  value="<?php echo isset($userinfo['u_email'])?$userinfo['u_email']:''; ?>" id="">
 					<p>您的电话：</p>
-					<input type="text" name="" id="">
+					<input type="text" name="m_phone"  value="<?php echo isset($userinfo['u_phone'])?$userinfo['u_phone']:''; ?>" id="">
+
 					<p>输入您要服务的内容：</p>
-					<textarea name="" id="" cols="30" rows="10"></textarea>
+
+					<textarea name="content" id="" value = "" cols="30" rows="10">
+
+					</textarea>
 					</div>
 					<p>
 						<input type="image" src="images/submit.gif" alt="">
