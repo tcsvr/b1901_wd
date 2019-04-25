@@ -23,10 +23,16 @@
 			<div class="main_left">
 				<div class="phone">		
 
-					<div class="photo"><a href="javascript:;"> <img src="images/user_01.gif" alt=""></a></div>
+
+
+
 					<form action="" method="post" enctype="multipart/form-data">
-						<input style="display:none;" type="file" name="upload" id=""><br>
+						<div class="photo"><a href="javascript:;"><img src="images/user_01.gif" alt=""></a></div>
+						<input type="text" name="text" style="display:none" value="1">
+						<input  type="file" name="upload" style="display:none" id=""><br>
+						<input type="submit" value="提交">
 					</form>
+					
 					<span> &emsp;<?php echo $userinfo['u_name'] ?></span>
 
 
@@ -165,6 +171,12 @@
 	} ) );
 
 
+	// $("#file").change(function () {
+	// 	setTimeout(function () {
+	// 		$("#userimgform").submit();
+	// 	},100);
+	// });
+
 
 	$('.photo').click(function(){
 		$('input[name="upload"]').trigger('click');
@@ -174,17 +186,17 @@
     //     $("#upload").click();
 	// });
 	
-    $('.photo').click(function(){
-        var file = this.files[0] ? this.files[0] : null; //不晓得这里换成$(this)为什么不行
-        if(null == file){
-            return false;
-        }
-        var file_reader = new FileReader();
-        file_reader.onload = (function(){
-            var image_url = this.result;        // 这是图片的路径
-            $("#js-portrait").attr('src', image_url);
-        });
-        file_reader.readAsDataURL(file);
-    });
+    // $('.photo').click(function(){
+    //     var file = this.files[0] ? this.files[0] : null; //不晓得这里换成$(this)为什么不行
+    //     if(null == file){
+    //         return false;
+    //     }
+    //     var file_reader = new FileReader();
+    //     file_reader.onload = (function(){
+    //         var image_url = this.result;        // 这是图片的路径
+    //         $("#js-portrait").attr('src', image_url);
+    //     });
+    //     file_reader.readAsDataURL(file);
+    // });
 	
 	</script>
