@@ -46,7 +46,7 @@ if($_POST){
 
         $sql = "SELECT * FROM wd_user WHERE u_name = '{$username}'";
         $userinfo = getOne($sql);
-        pre($userinfo);
+        // pre($userinfo);
 
         setcookie('islog','1');
         // 存用户名

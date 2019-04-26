@@ -1,4 +1,6 @@
 <?php include('view/common/header.html'); ?>
+<link rel="stylesheet" href="include/page/css.css">
+
 <!-- End: Header -->
 
 <!-- Start: Main -->
@@ -32,9 +34,10 @@
                       <tr class="active">
                         <th class="text-center" width="100"><input type="checkbox" value="" id="checkall" class=""> 全选</th>
                         <th width="100">编号</th>
-                        <th>姓名</th>
-                        <th>电话</th>
-                        <th>邮箱</th>
+                        <th>账号名称</th>
+                        <th>真实姓名</th>
+                        <th>电&emsp;&emsp;话</th>
+                        <th>邮&emsp;&emsp;箱</th>
                         <th>最后登陆时间</th>
                         <th width="200">操作</th>
                       </tr>
@@ -43,6 +46,7 @@
                         <td class="text-center"><input type="checkbox" value="<?php echo $v['u_id'] ?>" name="uidarr[]" class="cbox"></td>
                         <td><?php echo $v['u_id'] ?></td>
                         <td><?php echo $v['u_name'] ?></td>
+                        <td><?php echo $v['u_real'] ?></td>
                         <td><?php echo $v['u_phone'] ?></td>
                         <td><?php echo $v['u_email'] ?></td>
                         <td><?php echo date('Y-m-d h:i:s', $v['lasttime']); ?></td>
@@ -61,6 +65,7 @@
                   </div>
                   
                   <div class="pull-right">
+                      <?php echo $page; ?>
                     
                   </div>
                   

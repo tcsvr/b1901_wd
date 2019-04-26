@@ -15,70 +15,33 @@ $tip ='';
 if($_POST){
     $isshow = "1";
     if(!isset($_POST['password']) || empty($_POST['password'])){
-        //密码有误，请重新验证
-    
         $tip = '原密码不能为空，请输入';
-        // alert($tip);
-    
+    }else if($userinfo['u_password']!= md5($_POST['password'])){
+        $tip = '原密码有误，请重新验证';
+    }else if(!isset($_POST['changepassword']) || empty($_POST['changepassword']) ){
+        $tip ='请填写修改密码';
+    }else if(!isset($_POST['rechangepassword']) || empty($_POST['rechangepassword']) ){
+        $tip ='请填写确认修改的密码';
+    }else if(strlen($_POST['changepassword'])<4 || strlen($_POST['changepassword'])>16 ){
+        $tip ='密码长度为4-16位';
+    }else if(strlen($_POST['rechangepassword'])<4 || strlen($_POST['rechangepassword'])>16 ){
+        $tip ='密码长度为4-16位';
+    }else if( $_POST['changepassword'] != $_POST['rechangepassword']){
+        $tip ='新密码和确认密码不一致';
+    }else if($_POST['changepassword'] == $_POST['password']){
+        $tip ='原密码和新密码一致，请重新修改';
     }else{
-    
-        $pass = md5($_POST['password']);
-        
-        if($userinfo['u_password']!=$pass){
-    
-           $tip = '原密码有误，请重新验证';
-        //    alert($tip);
-    
-        }
+        $changepassword = md5($_POST['changepassword']);
 
+        $sql = "UPDATE wd_user SET  `u_password`= '{$changepassword}'  WHERE  u_id = '{$uid}'";
 
-        if(!isset($_POST['changepassword']) || empty($_POST['changepassword']) ){
-            $tip ='请填写修改密码';
+        $bool = mysql_query($sql);
+        if($bool && mysql_affected_rows()){
+            alert('修改成功，请重新登录','out.php');
+        }else{
+            $tip = '修改失败';
         }
-
-        if(!isset($_POST['rechangepassword']) || empty($_POST['rechangepassword']) ){
-            $tip ='请填写确认修改的密码';
-        }
-
-        // 判断长度
-        if(strlen($_POST['changepassword'])<4 || strlen($_POST['changepassword'])>16 ){
-            $tip ='密码长度为4-16位';
-        }
-        if(strlen($_POST['rechangepassword'])<4 || strlen($_POST['rechangepassword'])>16 ){
-            $tip ='密码长度为4-16位';
-        }
-
-        if($_POST['changepassword'] != $_POST['rechangepassword']){
-            $tip ='修改密码和确认密码不一致';
-        }
-    } 
-    if($_POST['changepassword'] == $_POST['password']){
-        $tip ='原密码和修改密码一致，请重新修改';
     }
-    $changepassword = md5($_POST['changepassword']);
-
-    $sql = "UPDATE wd_user SET  `u_password`= '{$changepassword}'  WHERE  u_id = '{$uid}'";
-
-    $bool = mysql_query($sql);
-    // var_dump(mysql_affected_rows());exit;
-    if($bool && mysql_affected_rows()){
-        alert('修改成功，请重新登录','login.php');
-    }else{
-        $tip = '原密码有误';
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }

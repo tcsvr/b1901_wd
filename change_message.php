@@ -10,22 +10,21 @@ if(!$islog){
     $sql = "SELECT * FROM wd_user WHERE u_id = '{$uid}'";
     $userinfo = getOne($sql);
 }
+// pre($userinfo);
 
-
-
-
+// $p_img = 
 
 
 if($_POST){
-    pre($_FILES);
+    // pre($_FILES);
     if($_FILES) {
         
-        //上传操作
+            //上传操作
         $name = 'upload';
         $uri = _UPLOADS_;
         $images = upload($name,$uri);
         $p_img = $images['filename'];  //我们要的数据
-        
+    
         // pre($p_img);
         //生成缩略图
         $img = _UPLOAD_.$p_img;      //图片来源地址
@@ -41,15 +40,15 @@ if($_POST){
         $p_thumb = thumb_img($img,$son_width,$son_height,$url,$thumpath); //我们要的数据 缩略图
         // pre($p_thumb);
     }
-    // //
+    // // // //
     $sql = "INSERT INTO wd_user
-    (`p_photo1`,`p_photo2`)
+    (`u_photo1`,`u_photo2`)
     VALUES
     ('{$p_img}','{$p_thumb}')";
     
     
-    $bool = mysql_query($sql);
-    var_dump($bool);exit;
+    
+    // var_dump($bool);exit;
     
 
     if(!empty($_POST['u_name']) && isset($_POST['u_name'])){
@@ -72,15 +71,21 @@ if($_POST){
             }
         }
     } 
+    
+
+    
 
     $u_real = isset($_POST['u_real'])?$_POST['u_real']:'';
     $u_sex = isset($_POST['u_sex'])?$_POST['u_sex']:'';
     $u_phone = isset($_POST['u_phone'])?$_POST['u_phone']:'';
     $u_email = isset($_POST['u_email'])?$_POST['u_email']:'';
     $u_birthday = isset($_POST['u_birthday'])?$_POST['u_birthday']:'';
-
-    $sql = "UPDATE wd_user SET  `u_name`= '{$u_name}',`u_sex`= '{$u_sex}',`u_real`= '{$u_real}',`u_phone`= '{$u_phone}', `u_email`='{$u_email}', `u_birthday`='{$u_birthday}' WHERE  u_id = '{$uid}' ";
-
+    
+    $sql = "UPDATE wd_user SET  `u_name`= '{$u_name}',`u_sex`= '{$u_sex}',
+    `u_real`= '{$u_real}',`u_phone`= '{$u_phone}', `u_email`='{$u_email}', 
+    `u_birthday`='{$u_birthday}' ,`u_photo1`='{$p_img}' ,`u_photo2`='{$p_thumb}' 
+    WHERE  u_id = '{$uid}' ";
+    
     $bool = mysql_query($sql);
     // var_dump($bool);exit;
 	if($bool && mysql_affected_rows()){
@@ -102,5 +107,7 @@ if($_POST){
 
 
 
+
 include('view/change_message.html');
+// pre($dragImgUpload);
 ?>
