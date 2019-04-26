@@ -20,14 +20,14 @@
 			</nav>
 		</div>
 		<div class="main">
-			<form action="" method="post" enctype="multipart/form-data">
+			<form action="" method="post" id="userimgform" enctype="multipart/form-data">
 			<div class="main_left">
-				<div class="phone" id="">	
+				<div class="phone" id="drop_area">	
 
 
 						<div class="photo"><a href="javascript:;"><img src="<?php echo _THUMB_.$userinfo['u_photo2'] ?>" alt=""></a></div>
 						<input type="text" name="text" style="display:none" value="1">
-						<input  type="file" name="upload" style="display:none" id=""><br>
+						<input  type="file" name="upload" style="display:none" id="file"><br>
 					
 					<span> &emsp;<?php echo $userinfo['u_name'] ?></span>
 
@@ -109,7 +109,7 @@
 						<tr>
 							<td>&emsp;</td>
 							<td >
-								<input type="submit" class="cswbtn" value="保存">
+								<input type="submit" name="csub" class="cswbtn" value="保存">
 								<a  class="cswa" href="change_password.php">修改密码</a>
 							</td>
 						</tr>
@@ -128,6 +128,7 @@
 <!-- 导航滚动条 -->
 <script src='js/nav_scroll.js'></script>
 <script src='js/chang_message.js'></script>
+<script src='js/upload.js'></script>
 <script>
 
 		( function( factory ) {
@@ -178,18 +179,26 @@
 	};
 	}
 
+
 	$('.photo').click(function(){
 		$('input[name="upload"]').trigger('click');
 	});
-
-
+	
+	
+	
 	// var dragImgUpload = new DragImgUpload("#drop_area",{
-    //     callback:function (files) {
-    //         //回调函数，可以传递给后台等等
-    //         var file = files[0];
-    //         console.log(file.name);
-    //     }
-    // })
+	// 	callback:function (files) {
+	// 		//回调函数，可以传递给后台等等
+	// 		var file = files[0];
+	// 		console.log(file.name);
+	// 	}
+	// })
+	
+	$("#file").change(function () {
+		setTimeout(function () {
+			$("#userimgform").submit();
+		},100);
+	});
 
 
 
